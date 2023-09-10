@@ -10,7 +10,7 @@ const loader = document.getElementById('loader')
 
 // Show New Quote
 
-function loading () {
+function loading() {
     loader.hidden = false;
     quoteContainer.hidden = true;   
 }
