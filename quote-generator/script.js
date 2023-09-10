@@ -3,13 +3,27 @@ const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
+const loader = document.getElementById('loader')
 
 // Get quotes from API
 // let apiQuotes = []; 
 
 // Show New Quote
 
+function loading () {
+    loader.hidden = false;
+    quoteContainer.hidden = true;   
+}
+
+//Hide Loading
+
+function complete() {
+    quoteContainer.hidden = false;
+    loader.hidden = true;
+}
+
 function newQuote() {
+    loading();
     //Pick a random quote from API quotes array
 
     const quote = localQuotes[Math.floor(Math.random()* localQuotes.length)] //replace localQuotes with apiQuotes if I want to change it back
@@ -28,7 +42,10 @@ function newQuote() {
         quoteText.classList.remove('long-quote')
     }
 
+    //Set Quote and Hide Loader
+
     quoteText.textContent = quote.text
+    complete();
 }
 
 // async function getQuotes() {
