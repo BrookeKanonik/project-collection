@@ -15,6 +15,7 @@ Small quote generator regarding Pompompurin created for my niece since we both l
 ## Restaurant Template (restaurant-template folder)
 
 Mobile friendly restaurant website created with CSS and Bootstrap that features interactive tabs and a working contact form. 
+https://restaurant-sample-page.netlify.app/
 
 ## Star Wars CRUD Project (star-wars-crud folder) 
 
