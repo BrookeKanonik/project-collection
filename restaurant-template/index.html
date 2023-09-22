@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Template</title>
+    <!-- link to google fonts -->
+    <link rel="stylesheet" href = "https://fonts.googleapis.com/css?family=Alumni+Sans"> 
+    <!-- link to bootstrap CDN for CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- navbar with bootstrap classes -->
+    <nav class ="navbar navbar-expand-lg fixed-top opacity-hover-off" id="myNavbar">
+        <!-- make sure that the navbar items have default space -->
+        <div class="container-fluid">
+            <!-- default class needed for the navbar items -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="font-size: 2rem;">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu" style="font-size: 2rem;">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" style="font-size: 2rem;">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="font-size: 2rem;">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- header with image -->
+    <header class="bg-img d-flex flex-column justify-content-between" id="home">
+        <div></div>
+        <div class="d-flex flex-column text-center">
+            <!-- display 1 is like a splash header similar to h1, h2, h3... -->
+            <span class="display-1 intro">REALLY<br>AMAZING FOOD</span>
+            <!-- fs is to control font size btn is to make the anchor tag look like a button -->
+            <p><a href="#menu" class="btn btn-lg btn-dark hover-btn fs-2">Click here to see our menu</a></p>
+        </div>
+        <!-- py-5 padding on the y-axis of 5 -->
+        <div class="d-flex justify-content-start">
+            <span class="bg-black text-white p-3 h2 rounding">Open from 10am to 9pm - Call 555-555-5555</span>
+        </div>
+    </header>
+
+    <!-- menu container -->
+    <!-- container fluid will always fit the entire width of the screen -->
+    <div class="container-fluid bg-black text-white py-5 display-4" id="menu">
+        <!-- default margins for container class -->
+        <div class="container">
+            <h1 class="text-center display-2 mb-5">THE MENU</h1>
+            <div class ="text-center border border-dark">
+                <!-- tabs for the menu item types -->
+                <div class="d-flex">
+                    <!-- event is the interaction between the user and the application. event is the click -->
+                    <!-- NEED javascript:void(0) for it to work -->
+                    <a href="javascript:void(0)" onclick ="openMenu(event, 'Drinks');" class="col-4 tablink p-3 hover-red" id="mainLink">Drinks</a>
+                    <a href="javascript:void(0)" onclick ="openMenu(event, 'Starters');" class="col-4 tablink p-3 hover-red">Starters</a>
+                    <a href="javascript:void(0)" onclick ="openMenu(event, 'Entrees');" class="col-4 tablink p-3 hover-red">Entrees</a>
+                </div>
+
+            </div>
+
+            <!-- Drinks -->
+            <!-- container fluid to fill the full width of the parent container/container they live in -->
+            <div id="Drinks" class ="container-fluid menu p-4 bg-white">
+                <!-- align items baseline makes sure the items are parallel to each other because of the badges -->
+               <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Banana Smoothie</b></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$5.00</span>
+                   
+               </div>
+               <p class="text-muted">Smoothie made with fresh bananas</p>
+               <!-- easy way to draw a line horizontal rule -->
+               <hr class="text-muted">
+
+               <div class="d-flex justify-content-between align-items-baseline">
+                <h1 class="mb-0 display-3"><b>Strawberry Smoothie</b></h1>
+                <!-- badges are custom to bootstrap -->
+                <span class="badge bg-dark text-white">$5.00</span>
+               
+                </div>
+                <p class="text-muted">Smoothie made with fresh strawberries</p>
+                <!-- easy way to draw a line horizontal rule -->
+                <hr class="text-muted">
+
+                               <div class="d-flex justify-content-between align-items-baseline">
+                <h1 class="mb-0 display-3"><b>Water (16oz)</b></h1>
+                <!-- badges are custom to bootstrap -->
+                <span class="badge bg-dark text-white">$4.00</span>
+               
+                </div>
+                <p class="text-muted">16oz water bottle</p>
+                <!-- easy way to draw a line horizontal rule -->
+                <hr class="text-muted">
+
+               <div class="d-flex justify-content-between align-items-baseline">
+                <h1 class="mb-0 display-3"><b>Fountain Drink (16oz)</b></h1>
+                <!-- badges are custom to bootstrap -->
+                <span class="badge bg-dark text-white">$3.50</span>
+               
+                </div>
+                <p class="text-muted">Your choice of cola, sprite, rootbeer, or fruit punch in a 16oz cup</p>
+                <!-- easy way to draw a line horizontal rule -->
+                <hr class="text-muted">
+
+                
+
+
+            </div>
+
+            <!-- Starters -->
+            <div id="Starters" class ="container-fluid menu p-4 bg-white">
+                <!-- align items baseline makes sure the items are parallel to each other because of the badges -->
+               <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Chicken Wings (8 count) </b><span class="badge bg-grey text-white small-tag">Popular</span></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$9.00</span>
+                   
+               </div>
+               <p class="text-muted">Wings tossed in house, mild, medium, hot, or garlic sauce</p>
+               <!-- easy way to draw a line horizontal rule -->
+               <hr class="text-muted">
+
+               <div class="d-flex justify-content-between align-items-baseline">
+                <h1 class="mb-0 display-3"><b>Mozzarella Sticks (6 count) </b></h1>
+                <!-- badges are custom to bootstrap -->
+                <span class="badge bg-dark text-white">$8.00</span>
+                </div>
+                <p class="text-muted">Mozzarella sticks served with marinara sauce</p>
+                <!-- easy way to draw a line horizontal rule -->
+                <hr class="text-muted">
+
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Loaded Nachos</b></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$13.00</span>
+                   
+               </div>
+               <p class="text-muted">Your choice of chicken or beef topped with cheese, beans, sour cream, salsa, and jalapenos</p>
+               <!-- easy way to draw a line horizontal rule -->
+               <hr class="text-muted">
+
+               <div class="d-flex justify-content-between align-items-baseline">
+                <h1 class="mb-0 display-3"><b>Quesadilla Trio</b></h1>
+                <!-- badges are custom to bootstrap -->
+                <span class="badge bg-dark text-white">$14.00</span>
+                </div>
+                <p class="text-muted">Three mini quesadillas consisting of beef, chicken, and carne asada</p>
+                <!-- easy way to draw a line horizontal rule -->
+                <hr class="text-muted">
+
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Fried Mushrooms</b></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$8.00</span>
+                   
+               </div>
+               <p class="text-muted">Fried mushrooms served with our smokey ranch dip</p>
+               <!-- easy way to draw a line horizontal rule -->
+               <hr class="text-muted">
+
+               <div class="d-flex justify-content-between align-items-baseline">
+                <h1 class="mb-0 display-3"><b>Artichoke Dip</b></h1>
+                <!-- badges are custom to bootstrap -->
+                <span class="badge bg-dark text-white">$11.00</span>
+               
+                </div>
+                <p class="text-muted">Artichoke dip served with our freshly made tostada chips</p>
+                <!-- easy way to draw a line horizontal rule -->
+                <hr class="text-muted">
+               
+           </div>
+
+           
+
+            <!-- Entrees -->
+            <div id="Entrees" class ="container-fluid menu p-4 bg-white">
+                <!-- align items baseline makes sure the items are parallel to each other because of the badges -->
+               <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Pasta in Vodka Sauce w/ Chicken</b></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$15.00</span>
+                   
+               </div>
+               <p class="text-muted">Penne pasta tossed in our vodka sauce topped with grilled chicken, tomatoes and basil</p>
+               <!-- easy way to draw a line horizontal rule -->
+               <hr class="text-muted">
+
+               <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Cheeseburger w/ Fries</b></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$13.00</span>
+               
+                </div>
+                <p class="text-muted">Cheeseburger topped with onions, lettuce, pickles, and ketchup and served with our house truffle fries</p>
+                <!-- easy way to draw a line horizontal rule -->
+                <hr class="text-muted">
+
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Rack of Ribs</b></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$26.00</span>
+                   
+               </div>
+               <p class="text-muted">Full rack of ribs served with our house truffle fries and coleslaw</p>
+               <!-- easy way to draw a line horizontal rule -->
+               <hr class="text-muted">
+               <div class="d-flex justify-content-between align-items-baseline">
+                    <h1 class="mb-0 display-3"><b>Mushroom Chicken</b></h1>
+                    <!-- badges are custom to bootstrap -->
+                    <span class="badge bg-dark text-white">$17.00</span>
+               
+               </div>
+               <p class="text-muted">Chicken topped with mushroom sauce and heirloom tomatoes and served with mashed potatoes and the vegetable of the day</p>
+               <!-- easy way to draw a line horizontal rule -->
+               <hr class="text-muted">
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- about container -->
+    <!-- py-5 is pushing the padding inside -->
+    <div class="container-fluid py-5 text-white" style="background-color: rgb(156, 190, 156);" id="about">
+        <div class="container">
+            <h1 class="text-center display-2 mb-3">ABOUT</h1>
+            <h1 class="display-4"><b>Opening Hours</b></h1>
+            <!-- bootstrap lets you use row -->
+            <div class="row fs-2 mb-4">
+                <!-- col-6 is the space -->
+                <div class="col-6">
+                    <p>Open Daily from 10am-9pm</p>
+                </div>
+                <div class="col-6">
+                    <p>Brunch Served Sat & Sun from 10am-1pm</p>
+                </div>
+
+            </div>
+            <h1 class="display 4"><b>History</b></h1>
+            <p class="fs-2">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus quidem aut asperiores eaque in omnis cupiditate laudantium, quod magni modi porro quaerat inventore architecto iste fugit odio sequi, quis nobis sint consequuntur odit vero! Aliquid earum, ab beatae praesentium eos pariatur sequi minima obcaecati est blanditiis unde dicta dolor minus aliquam consequatur expedita ducimus possimus nisi officiis? Esse, a exercitationem.
+            </p>
+            <div class="row">
+                <!-- shrinking the space based on how big our elements are -->
+                <!-- numbers are offsetting the paragraph and picture -->
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                    <p class="fs-2"><b>The Chef? </b>Mr. Lee Himself. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto temporibus, sit aperiam facere delectus libero expedita illo dolor odio quasi magni labore praesentium hic quisquam nisi, perferendis optio? Ratione ut aut optio provident necessitatibus. Animi culpa autem aperiam similique suscipit asperiores distinctio atque, error ducimus, amet facere consequatur. Voluptatum, eum.</p>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12 text-end">
+                    <img src="assets/chef.jpg" alt="Chef Image" style="width: 200px;" class="rounded-circle">
+                </div>
+            </div>
+            <p class="fs-2">We are proud of our food!</p>
+            <img src="assets/restaurant.jpg" alt="Restaurant Image" style="width: 100%" class="my-3 img-grayscale">
+        </div>
+
+    </div>
+    <!-- contact section -->
+    <div class="container-fluid bg-secondary text-white py-5 fs-2" id="contact">
+        <!-- using a container so it always has a border for us -->
+        <div class="container">
+            <h1 class="text-center display-2 mb-5">CONTACT</h1>
+            <p>Find us at:<br>100000 Broadway 2nd Floor Bayonne, New Jersey or call us at 555-555-5555!</p>
+            <p>
+                <span class="badge bg-dark">FYI!</span>
+                We offer full-service catring for any event, large or small. We understand your needs and we will cater the food to satisfy the biggest criteria of them all, both look and taste.
+            </p>
+            <p><b>Reserve</b> a table, ask for today's special or just send us a message!</p>
+            <form action="/action_page.php" target="_blank">
+                <div class="mb-3">
+                    <!-- form control links the input the form above -->
+                    <input type="text" placeholder="Name" class="form-control extra-large" required name="Name" id="Name">
+                </div>
+                <div class="mb-3">
+                    <!-- form control links the input the form above -->
+                    <input type="number" placeholder="How Many People?" class="form-control extra-large" required name="People" id="People">
+                </div>
+                <div class="mb-3">
+                    <!-- form control links the input the form above -->
+                    <input type="datetime-local" placeholder="Date and Time" class="form-control extra-large" required name="Date" id="Date">
+                </div>
+                <div class="mb-3">
+                    <!-- form control links the input the form above -->
+                    <input type="text" placeholder="Message or Special Request" class="form-control extra-large" required name="Message" id="Message">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-light btn-lg btn-block fs-2" href="javascript:void(0)" onclick="submitForm()">SEND MESSAGE</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <footer class="text-center bg-dark text-white py-4">
+        <p class="fs-3 mb-0">Original Design Inspired by 
+            <a href="https://www.w3schools.com" title="W3 Schools" target="_blank" class="text-success hover-text-green">W3 Schools</a>
+        </p>    
+        <p class="fs-3 mb-0">Built with Bootstrap and CSS by 
+            <a href="https://github.com/BrookeKanonik" title="Brooke Kanonik Github" target="_blank" class="text-success hover-text-green">Brooke Kanonik</a>
+        </p> 
+
+    </footer>
+
+  
+    <script src="script.js"></script>
+</body>
+</html>
