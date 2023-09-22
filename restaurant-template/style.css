@@ -1,0 +1,118 @@
+body, html {
+    height: 100%
+}
+body, h1,h2, h3, h4, h5, h6 {
+    font-family: 'Alumni Sans', sans-serif
+}
+
+/* custom styles for navbar */
+.opacity-hover-off {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.opacity-hover-off:hover {
+    background-color: rgba(0,0,0,1)
+}
+
+/* changing the navbar links */
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* hover over one of the navbar links to have the background of the box change */
+.navbar-nav .nav-link:hover {
+    background-color: white;
+    color: black;
+}
+
+/* hide navbar on small screens */
+@media (max-width: 992px) {
+    #myNavbar {
+        display: none;
+    }
+}
+
+/* custom styles for header */
+.bg-img {
+    background-image: url('assets/pizza_splash.jpg');
+    /* cover is used in this case to see more of the image. without it it is more zoomed in*/
+    background-size: cover; 
+    background-position: center;
+    /* image is always as tall as our screen is 100vh which is viewport height */
+    min-height: 100vh;
+}
+
+/* making sure the button never gets too small. we are using pixels so it is a hard cut off*/
+.btn {
+    min-width: 250px;
+}
+
+.rounding {
+   border: solid white 1px;
+}
+
+/* changes color when you go over the menu button in the header */
+.btn.hover-btn:hover {
+    background-color: lightgrey;
+    color: black;
+    text-decoration: underline;
+}
+
+/* custom styles for menu box */
+
+.bg-black {
+    background-color: black;
+}
+
+.hover-red:hover {
+    background-color: rgba(225,0,0,0.5);
+    color: white;
+}
+
+.active-tab {
+    background-color: rgb(95, 22, 22);
+    color: white;
+}
+
+/* want to change this for future clients */
+.border-dark {
+    border-color: darkgray;
+}
+
+.badge {
+    padding: .6em .8em;
+}
+
+.small-tag {
+    padding: .3em .3em;
+}
+
+.bg-red {
+    background-color: rgb(133, 28, 28);;
+    color: white;
+}
+
+/* making badges with this a grey color */
+.bg-grey {
+    background-color: grey;
+}
+
+/* making the menu item titles black */
+.menu h1 {
+    color: black;
+}
+
+.hover-red {
+    color: green;
+}
+
+.img-grayscale {
+    filter: grayscale(100%);
+}
+
+/* form modifications */
+.extra-large {
+    height: 60px; /* hardcoding so it stays the same height even in mobile*/
+    font-size: 1.8rem;
+}
