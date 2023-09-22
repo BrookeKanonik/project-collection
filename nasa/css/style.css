@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chelsea+Market&family=Montserrat&display=swap');
+
+
+
 /******************************************
 /* CSS
 /*******************************************/
@@ -23,3 +28,74 @@ img{
 .visible {
   display: none;
 }
+
+body {
+  background-image: url('../stars.png');
+  display: flex;
+  flex-direction: column;
+  text-align:  center;
+}
+
+h1 {
+  font-size: 6rem;;
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Chelsea Market'
+}
+
+input, button {
+  margin: 0 35%;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  text-align: center;
+  font-family: 'Chelsea Market'
+}
+
+/* button {
+  transition-duration: 0.4s;
+} */
+
+button:hover {
+  color: white;
+  background-color: gray; 
+  transition-duration: 0.4s;
+}
+
+h3 {
+  margin-top: 45px;
+  color: whitesmoke;
+  font-family: 'Chelsea Market';
+  font-size: 2rem;
+  
+}
+
+img {
+  border: 5px solid whitesmoke;
+  border-radius: 5px;
+  
+}
+
+.fade-in {
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+@media (max-width: 992px) {
+  button, input {
+    font-size: 3rem;
+    margin: 0 21%;
+  }
+  
+  h3 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+
+}
+
