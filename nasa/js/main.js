@@ -24,6 +24,7 @@ function getFetch(){
           document.querySelector('h3').innerText = data.explanation
 
         } else {
+          document.querySelector('iframe').classList.add('visible') 
           document.querySelector('img').classList.add('visible')
           document.querySelector('h3').innerText = 'Please enter a past or current date'
         }
