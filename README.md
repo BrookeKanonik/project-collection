@@ -6,7 +6,7 @@ Interactive e-commerce website built with react and django that uses a PAYPAL AP
 
 ## Lets Make A Meal Together (IN PROGRESS -- ROUGH DRAFT)
 
-Users can log in and post recipies (including steps and ingredients) via form. There will be a page where users can view uploaded recipies and add items that they currently do not have in their pantry so that those items will be added to their shopping list located on the shopping list tab. Planning to make the shopping list a printable page.
+Users can log in and post recipes (including steps and ingredients) via form. There will be a page where users can view uploaded recipes and add items that they currently do not have in their pantry so that those items will be added to their shopping list located on the shopping list tab. Planning to make the shopping list a printable page.
 
 ## Nasa Image/Video Projector (nasa folder)
 
