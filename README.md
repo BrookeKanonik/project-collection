@@ -4,6 +4,10 @@
 
 Interactive e-commerce website built with react and django that uses a PAYPAL API. Admins can add products, update shipping for customer's orders and more! Customers can see when items are out of stock, rate products, and pay for goods with either PAYPAL or a credit card.
 
+## Lets Make A Meal Together (IN PROGRESS -- ROUGH DRAFT)
+
+Users can log in and post recipies (including steps and ingredients) via form. There will be a page where users can view uploaded recipies and add items that they currently do not have in their pantry so that those items will be added to their shopping list located on the shopping list tab. Planning to make the shopping list a printable page.
+
 ## Nasa Image/Video Projector (nasa folder)
 
 Users may select a date (current or in the past) and either an image or video will populate along with the description of said item.
