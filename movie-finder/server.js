@@ -39,23 +39,23 @@ app.get("/search", async (request, response) => {
             }
         ]).toArray()
         response.send(result)
-        console.log(result)
+        
     } catch (error){
         response.status(500).send({message: error.message})
-        console.log(error)
+        
     }
 })
 
 app.get("/get/:id", async (request, response)=> {
     try {
         let result = await collection.findOne({
-            "_id" : ObjectId(request.params.id) //passing an id within the url 
+            "_id" : new ObjectId(request.params.id) //passing an id within the url //had to add new for ObjectId
         })
         response.send(result)
-        console.log('findingone')
+        
     }catch (error){
         response.status(500).send({message: error.message})
-        console.log('error')
+       
     }
 })   //:id is a paramater which is the id of the object we want to bring back
 

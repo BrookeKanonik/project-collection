@@ -10,7 +10,7 @@ $(document).ready(function () { //tell the input box we want it to be an autocom
                                     id: result._id
                                 }
                             }))
-                            console.log(data)
+                            
                             response(data)
                            
         }, 
@@ -21,6 +21,7 @@ $(document).ready(function () { //tell the input box we want it to be an autocom
                 .then(result => result.json())
                 .then(result => {
                     $('#cast').empty()
+                    console.log(result)
                     result.cast.forEach(cast => {
                         $('#cast').append(`<li>${cast}</li>`)
                     })
