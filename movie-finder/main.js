@@ -10,7 +10,9 @@ $(document).ready(function () { //tell the input box we want it to be an autocom
                                     id: result._id
                                 }
                             }))
+                            console.log(data)
                             response(data)
+                           
         }, 
         minLength: 2,
         select: function(event, ui){ //once a movie is selected, we are placing the information in the html through jquery
@@ -20,7 +22,7 @@ $(document).ready(function () { //tell the input box we want it to be an autocom
                 .then(result => {
                     $('#cast').empty()
                     result.cast.forEach(cast => {
-                        $(cast).append(`<li>${cast}</li>`)
+                        $('#cast').append(`<li>${cast}</li>`)
                     })
                     $('img').attr('src', result.poster) //adding the poster link
                 })

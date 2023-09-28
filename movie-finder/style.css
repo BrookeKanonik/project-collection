@@ -6,7 +6,7 @@ body {
 img {
     max-height: 500px;
 }
-
+/* making the input box a lot larger */
 input {
-    width: 400px;
+    width: 400px; 
 }
