@@ -3,7 +3,7 @@ const app = express()
 const cors = require('cors')
 const {MongoClient, ObjectId} = require('mongodb') //pulling out these objects that we need from mongodb
 require('dotenv').config()
-const PORT = 8000
+const PORT = 8000 //where our backend is at 
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
@@ -58,3 +58,5 @@ app.get("/get/:id", async (request, response)=> {
 app.listen(process.env.PORT || PORT, () => {
     console.log('Server is running')
 })
+
+
