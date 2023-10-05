@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- will be using materialize and will change the font --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>StoryBooks</title>
+</head>
+<body>
+    {{!-- >_header is how we pull in the information from the header from the partials folder along with the add_btn--}}
+    {{>_header}}
+    {{>_add_btn}}
+    
+    {{!-- container will push everything to the middle --}}
+    <div class="container">
+         {{{body}}}
+    </div>
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js"
+        integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
+    {{!-- the sidenav script below is being used because of materialize. it is needed to have the hamburger menu work when clicked --}}
+    <script>
+        M.Sidenav.init(document.querySelector('.sidenav'))
+        M.FormSelect.init(document.querySelector('#status'))
+
+        CKEDITOR.replace('body', {
+            plugins: 'wysiwygarea, toolbar, basicstyles, link'
+        })
+    </script>
+    {{!-- for CKEDITOR, we want to replace in the add.hbs CKEDITOR and can do so since the name is set to body. this is the text editor that lets you type, bold text, add a link etc for the form field--}}
+    {{!-- above adding the form select so that the form is more appealing and spaced out --}}
+</body>
+</html>
