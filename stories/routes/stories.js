@@ -24,6 +24,23 @@ router.post('/', ensureAuth, async (req,res) => { //only a guest should be able 
     }
 })
 
+// @ descriptions show all stories
+// @ route GET /stories 
+router.get('/', ensureAuth, async (req,res) => { //only a guest should be able to see this
+    try{
+        const stories = await Story.find({status: 'public'}) //we will only show the stories that are public
+            .populate('user')
+            .sort({createdAt: 'desc'})
+            .lean() //need .lean so we can pass this into our template
+        res.render('stories/index', {
+            stories, //we want to pass in stories into this render
+        })
+    }catch(err){
+        console.error(err)
+        res.render('error/500')
+    }
+})
+
 
 module.exports = router //we can run this in the app.js file
 

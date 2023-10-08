@@ -1,5 +1,4 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy
-const mongoose = require('mongoose')
 const User = require('../models/User')
 
 //we passed passport into this file via app.js, so we can pass it in below

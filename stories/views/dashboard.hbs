@@ -15,8 +15,9 @@
         <tbody>
             {{#each stories}}
             {{!-- it knows were in stories so for id it just needs _id not .id --}}
+            {{!-- should it be stories href? --}}
                 <tr>
-                    <td><a href="/stores/{{_id}}"></a>{{title}}</td>
+                    <td><a href="/stores/{{_id}}"></a>{{title}}</td> 
                      <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
                     <td><span class="dash-status">{{status}}</span></td>
                     <td></td>
