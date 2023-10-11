@@ -1,15 +1,17 @@
 <h1>Stories</h1>
 <div class="row">
-    {{#each stories}} 
-        <div class="col s12 m4">
-            <div class="card">
-                <div class="card-image">
-                    {{!-- to do: edit icon --}}
-                </div>
+    {{#each stories}}
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                {{!-- ../ is go up one level out of the loop to grab the user --}}
+                {{!-- needs triple curly braces in order to parse it --}}
+                {{{editIcon user ../user _id}}}
             </div>
             <div class="card-content center-align">
                 <h5>{{title}}</h5>
-                <p>{{body}}</p>
+                {{!-- helpers are added in the body below 150 is the length of chars we are truncating--}}
+                <p>{{stripTags (truncate body 150) }}</p>
                 <br>
                 <div class="chip">
                     <img src="{{user.image}}" alt="">
@@ -20,7 +22,8 @@
                 <a href="/stories/{{_id}}" class="btn grey">Read More</a>
             </div>
         </div>
+    </div>
     {{else}}
-        <p>No stories to display</p>
+    <p>No stories to display</p>
     {{/each}}
 </div>

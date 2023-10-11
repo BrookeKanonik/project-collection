@@ -16,9 +16,6 @@ router.get('/', ensureGuest, (req,res) => { //only a guest should be able to see
 // @ route GET / dashboard
 router.get('/dashboard', ensureAuth, async (req,res) => {
     try{
-        const thirdstory = await Story.find({ title: "Brookes Third Story", user: req.user.id });
-        console.log(thirdstory);
-        console.log('thing');
         const stories = await Story.find({ user: req.user.id }).lean()
         res.render('dashboard', {
             name: req.user.firstName,

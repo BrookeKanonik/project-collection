@@ -8,3 +8,17 @@ p {
     margin-top: 50px; /*to push it down*/
     text-align: center;
 }
+
+.fa-small {
+    font-size: 16px !important
+}
+
+/* what is making the edit and trash icon on the dashboard next to each other */
+.btn-float {
+    float: left;
+    margin-right: 10px;
+}
+
+.img-small {
+    width: 180px;
+}
