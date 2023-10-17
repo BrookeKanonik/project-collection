@@ -63,7 +63,7 @@ function AppContent() {
 
     const handleLogout = () => { //removing everything once a user logs out
       localStorage.removeItem('token')
-      localStorage.removeItem('userName')
+      localStorage.removeItem('username')
       setIsAuthenticated(false)
       setToken(null)
       setUsername(null)
@@ -94,7 +94,7 @@ function AppContent() {
         <div className="App"> 
             {isAuthenticated ? ( //if authenticated they will see username, logout and the rooms <> are fragments in react
                 <>
-                    <span>Welcome, {username}</span>
+                    <span>Welcome, {username}! </span>
                     <button onClick={handleLogout}>Logout</button>
                     <ChatRoomList rooms = {rooms} joinRoom = {joinRoom}/> 
                     {currentRoom && (

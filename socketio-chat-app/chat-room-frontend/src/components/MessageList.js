@@ -8,12 +8,15 @@ const MessageList = ({messages}) => {
             <ul>
                 {reversedMessages.map((message, index)=> (
                     <li key={index}>
+                        {/* Display the timestamp of the message */}
                         <span className = 'timestamp'>
-                            {new Date(message.timestamp).toLocaleDateString()}
+                            {new Date(message.timestamp).toLocaleString()}
                         </span>
-                        <span>
-                            {message.user ? message.user.username : 'Anonymous'}
+                        {/* Display the username of the sender or 'Anonymous' if not available */}
+                        <span className="username">
+                            {message.user ? message.user.username : 'Anonymous'}: 
                         </span>
+                        <span> </span>
                         {message.content}
                     </li>
                 ))}

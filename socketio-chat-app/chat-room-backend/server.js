@@ -100,4 +100,4 @@ server.listen(8000, () => {
     console.log('Server is running on http://localhost:8000')
 })
 
-// can add chatrooms to maybe have users create private chatrooms?? notes for a future project
+//can add chatrooms to maybe have users create private chatrooms?? notes for a future project
