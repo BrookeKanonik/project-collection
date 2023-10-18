@@ -47,6 +47,10 @@ footer {
     display: flex;
     flex-direction: column;
     text-align:center;
+    background: black;
+    color: whitesmoke;
+    font-size: 1em;
+    font-family: 'Lobster',Georgia, 'Times New Roman', Times, serif;
 }
 
 .second {
@@ -88,7 +92,8 @@ footer {
 .about-section {
     font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
     font-size: 3em;
-    border-top: 6px solid black;
+    border-bottom: 2px solid rgb(54, 54, 54);
+    margin: 5% 15% 10% 15%;
 }
 
 @media (max-width: 500px){
@@ -105,4 +110,26 @@ footer {
     /* .logging-in, .see-recipes, .about-us{
         margin-bottom: 5px;
     } */
+}
+
+a {
+    color: whitesmoke
+}
+
+a:hover {
+    color: red;
+}
+
+.first-about-line {
+    font-family: 'Homemade Apple', Georgia, 'Times New Roman', Times, serif;
+    font-size: .5em;
+
+}
+
+.email-bottom {
+    color: red;
+}
+
+footer > section > p {
+    font-size: 1.5em;
 }
