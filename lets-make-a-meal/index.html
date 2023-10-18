@@ -12,28 +12,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="bg-img">
-        <nav class="red darken-3">
+
+    <header class="bg-img">      
+        <nav class="black darken-3">
             <div class="nav-wrapper container">
         
                 <a href="#!" class="brand-logo center" id="title-name">Let's Make A Meal</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
                 <ul class="sidenav" id="mobile-demo">
-                    <li><a href="/login" id="links">Login</a></li>
-                    <li><a href="/recipes" id="links">Recipe Homepage</a></li>
-                    <li><a href="/myrecipes" id="links">My Recipes</a></li>
-                    <li><a href="/list" id="links">My Shopping List</a></li>
-                    <li><a href="/auth/logout" id="links">Logout</a></li>
+                    <div>
+                        <div>
+                            <li><a href="/login" id="links">Login</a></li>
+                            <li><a href="/recipes" id="links">Recipe Homepage</a></li>
+                            <li><a href="/myrecipes" id="links">My Recipes</a></li>
+                            <li><a href="/list" id="links">My Shopping List</a></li>
+                        </div>
+                        <div id="nav-options">
+                            <li><a href="/auth/logout" id="links">Logout</a></li>
+                        </div>
+                    </div>
+                    
                 </ul>
             </div>
         </nav>
-        <div>
-            <span></span>
-            <span></span>
+        <section class="second">
+            <p class="initial message">Welcome to Let's Make A Meal! A community where cooking lovers all come together to post their favorite recipes and make shopping lists for ingredients. Click below to check out some of the latest recipes!</p>
+        </section>
+        <div class="front-page-buttons">
+                <span class="logging-in">Login</span>
+                <span class="see-recipes">See Recipes</span>
+                <span class="about-us">About Us</span>
         </div>
+        <div></div>
     </header>
-    <section>
-
+    <section class="about-section">
+        <h2>About Us</h2>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -42,9 +55,11 @@
     </script>
 
     <footer>
+        <section></section>
         <section>
             FOOTER HERE FOR NOW
         </section>
+        <section></section>
     </footer>
     
 </body>
