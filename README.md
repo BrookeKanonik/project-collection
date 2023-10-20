@@ -4,9 +4,13 @@
 
 Interactive e-commerce website built with react and django that uses a PAYPAL API. Admins can add products, update shipping for customer's orders and more! Customers can see when items are out of stock, rate products, and pay for goods with either PAYPAL or a credit card.
 
-## Lets Make A Meal Together (IN PROGRESS -- ROUGH DRAFT)
+## Lets Make It, Chef ( -- IN PROGRESS, LARGE PROJECT ) 
 
 Users can login and post recipes (including steps and ingredients) via a form. There will be a page where users can view uploaded recipes and add items that they currently do not have in their pantry to their shopping list (which will be a printable page). 
+
+## Movie Finder (movie-finder folder)
+
+Using a large mongoDB database, users can type a movie into a search bar and it will autocomplete to guess what movie you are trying to look up! Fuzzy search is also implemented for 2 characters.
 
 ## Nasa Image/Video Projector (nasa folder)
 
@@ -21,6 +25,14 @@ Small quote generator regarding Pompompurin created for my niece since we both l
 
 Mobile friendly restaurant website created with CSS and Bootstrap that features interactive tabs and a working contact form. 
 https://restaurant-sample-page.netlify.app/
+
+## SocketIO Chat Room (socketio-chat-app folder)
+
+Using SocketIO, users can enter one of three chatrooms (after logging in) and communicate live with others! Messages are stored using MongoDB and username/token credentials are stored in local storage while a user is logged in.
+
+## Stories (stories folder)
+
+Using passort.js and google auth 2.0, users can login and view their and other's stories posted on the homepage. Users can create their own public and private stories as well as edit them. 
 
 ## Star Wars CRUD Project (star-wars-crud folder) 
 
