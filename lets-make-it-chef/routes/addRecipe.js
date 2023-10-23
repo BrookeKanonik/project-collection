@@ -2,8 +2,9 @@
 
 const express = require('express')
 const router = express.Router()
-const homeController = require('../controllers/addRecipe') //setting the path to the home.js in controller as homeController
+const addRecipeController = require('../controllers/addRecipe') //setting the path to the home.js in controller as homeController
 
-router.get('/', homeController.getAddRecipe) //when 
+router.get('/', addRecipeController.getAddRecipe) //when 
+router.post('/addRecipe', addRecipeController.addRecipe)
 
 module.exports = router
