@@ -40,13 +40,16 @@
     <div class="container">
         <form action="" method="POST">
         <div id="formfield">
-            <div class="ingredients">
-                <input type="text" name="text" class="text" size="50" placeholder="Ingredient" required>
-                <input type="text" name="text" class="text" size="50" placeholder="Amount" required>
-                <button>Remove <i class="fa fa-minus"></i></button>
-            </div>
-          
-          <input type="text" name="text" class="text" size="50" placeholder="Instructions" required>
+            <table id="theTable">
+                <tr>
+                    <td><input type="text" name="text" class="text" size="50" placeholder="Ingredient" required></td>
+                    <td><input type="text" name="text" class="text" size="50" placeholder="Amount" required></td>
+                    <td><button>Remove <i class="fa fa-minus"></i></button></td>
+                </tr>
+                    
+            </table>
+            <input type="text" name="text" class="text" placeholder="Instructions" required>
+         
         </div>
         <button class="add" onclick="add()"><i class="fa fa-plus"></i>Add Ingredient</button>
         <input name="submit" type="Submit" value="Submit">
