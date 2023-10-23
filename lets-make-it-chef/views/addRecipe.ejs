@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipes</title>
+    <!-- link to bootstrap CDN for CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="black darken-3">
+            <div class="nav-wrapper container">
+        
+                <a href="/" class="brand-logo center" id="title-name">Let's Make It, Chef</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+                <ul class="sidenav" id="mobile-demo">
+                    <div>
+                        <div id="nav-options">
+                            <li><a href="/login" id="links">Login</a></li>
+                            <li><a href="/recipes" id="links">Recipe Homepage</a></li>
+                            <li><a href="/myrecipes" id="links">My Recipes</a></li>
+                            <li><a href="/list" id="links">My Shopping List</a></li>
+                        </div>
+                        <div id="nav-options">
+                            <li><a href="/auth/logout" id="links">Logout</a></li>
+                        </div>
+                    </div>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h1>ADD RECIPE:</h1>
+    <p>Want to add a recipe for the world to see? Simply enter the ingridents needed and the cooking instructions below</p>
+    <div class="container">
+        <form action="" method="POST">
+        <div id="formfield">
+            <div class="ingredients">
+                <input type="text" name="text" class="text" size="50" placeholder="Ingredient" required>
+                <input type="text" name="text" class="text" size="50" placeholder="Amount" required>
+                <button>Remove <i class="fa fa-minus"></i></button>
+            </div>
+          
+          <input type="text" name="text" class="text" size="50" placeholder="Instructions" required>
+        </div>
+        <button class="add" onclick="add()"><i class="fa fa-plus"></i>Add Ingredient</button>
+        <input name="submit" type="Submit" value="Submit">
+      </form>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        M.Sidenav.init(document.querySelector('.sidenav'))
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
