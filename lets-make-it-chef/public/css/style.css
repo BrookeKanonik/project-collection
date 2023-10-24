@@ -183,7 +183,7 @@ input[type="Submit"]{
 }
   
 input[type="Submit"]:hover{
-    background: #f11010;
+    background: red;
     color: #e9f4fb;
     transition: .5s;
 }
@@ -212,7 +212,7 @@ input[type="Submit"]:hover{
 }
   
   .remove:hover, .add:hover{
-    background: #2691d9;
+    background: red;
     color: #e9f4fb;
     transition: .5s;
 }
@@ -220,4 +220,20 @@ input[type="Submit"]:hover{
 .ingredients {
     display: flex;
     flex-direction: row;
+}
+
+.addRecTitle, .addRecPar {
+    text-align: center;
+}
+
+.addRecTitle, .loginTitle {
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+}
+
+.loginTitle, .loginPar {
+    text-align: center;
+}
+
+.loginHere {
+    color: grey
 }
