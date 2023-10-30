@@ -4,7 +4,7 @@ const User = require('../models/User')
 
  exports.getLogin = (req, res) => {
     if (req.user) {
-      return res.redirect('/todos')
+      return res.redirect('/home')
     }
     res.render('login', {
       title: 'Login'
@@ -22,7 +22,7 @@ const User = require('../models/User')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', (err, user, info) => { //current error is with unknown authentication strategy "local"
       if (err) { return next(err) }
       if (!user) {
         req.flash('errors', info)
@@ -31,7 +31,7 @@ const User = require('../models/User')
       req.logIn(user, (err) => {
         if (err) { return next(err) }
         req.flash('success', { msg: 'Success! You are logged in.' })
-        res.redirect(req.session.returnTo || '/todos')
+        res.redirect(req.session.returnTo || '/home')
       })
     })(req, res, next)
   }
@@ -49,7 +49,7 @@ const User = require('../models/User')
   
   exports.getSignup = (req, res) => {
     if (req.user) {
-      return res.redirect('/todos')
+      return res.redirect('/signup')
     }
     res.render('signup', {
       title: 'Create Account'
@@ -89,7 +89,7 @@ const User = require('../models/User')
           if (err) {
             return next(err)
           }
-          res.redirect('/todos')
+          res.redirect('/home')
         })
       })
     })
