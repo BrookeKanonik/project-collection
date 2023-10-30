@@ -23,6 +23,7 @@ app.set('view engine', 'ejs') //making it ejs for the views
 app.use(express.static('public')) //using our items in the public folder 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(logger('dev'))
 
 // Sessions
 app.use(
@@ -37,6 +38,8 @@ app.use(
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.use(flash())
 
 app.use('/', homeRoutes)
 //app.use('/todos', todoRoutes) //when clicked on in ejs will take them home

@@ -44,7 +44,7 @@
                 <input type="text" name="userName" placeholder="Username" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
-                <input type="password" name="password" placeholder="Confirm Password" required>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
                 <input type="submit">
             </form>
         </div>   
@@ -52,7 +52,11 @@
     
     <p class="loginPar">Have an account? Please login <a href="/login" class="loginHere">here</a>!</p>
     </div>
-    
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         M.Sidenav.init(document.querySelector('.sidenav'))
