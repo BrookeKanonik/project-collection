@@ -17,7 +17,7 @@ const User = require('../models/User')
     if (validator.isEmpty(req.body.password)) validationErrors.push({ msg: 'Password cannot be blank.' })
   
     if (validationErrors.length) {
-      req.flash('errors', validationErrors)
+      req.flash('errors', validationErrors) //flash the errors on the pages 
       return res.redirect('/login')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
@@ -65,7 +65,7 @@ const User = require('../models/User')
     if (validationErrors.length) {
       req.flash('errors', validationErrors)
       return res.redirect('../signup')
-    }
+    } //if anything is wrong, errors will show with a redirect to the page again
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
     const user = new User({

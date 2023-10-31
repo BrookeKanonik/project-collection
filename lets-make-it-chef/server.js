@@ -3,27 +3,27 @@ const app = express()
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
-const flash = require('express-flash')
-const logger = require('morgan')
+const MongoStore = require('connect-mongo')(session) //for session cookies
+const flash = require('express-flash') //storimg sessions in db
+const logger = require('morgan') //shows terminal history
 const connectDB = require('./config/database')
 const homeRoutes = require('./routes/home')
 const loginRoutes = require('./routes/login')
 const signupRoutes = require('./routes/signup')
 const addRecipeRoutes = require('./routes/addRecipe')
 
-require('dotenv').config({path: './config/.env'})
+require('dotenv').config({path: './config/.env'}) //use env and where to find it 
 
 // Passport config
 require('./config/passport')(passport)
 
-connectDB()
+connectDB()  
 
 app.set('view engine', 'ejs') //making it ejs for the views
 app.use(express.static('public')) //using our items in the public folder 
 app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
-app.use(logger('dev'))
+app.use(express.json()) //pull things we need out of requests
+app.use(logger('dev')) //set up morgan to run
 
 // Sessions
 app.use(

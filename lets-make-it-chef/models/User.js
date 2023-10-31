@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   password: String
-})
+}) //user schema will be a document that has a username, email and password. just a constructor function
 
 
 // Password hash middleware.
@@ -33,4 +33,4 @@ UserSchema.methods.comparePassword = function comparePassword(candidatePassword,
 }
 
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = mongoose.model('User', UserSchema) //first parameter is name of collection
