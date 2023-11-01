@@ -7,7 +7,7 @@ module.exports = {
 
     addRecipe: async (req, res)=>{
         try{
-            await Todo.create({recipe: req.body})
+            await Todo.create({recipe: req.body}) //change Todo later
             console.log('Recipe Has Been Added!')
             res.redirect('/') //CREATE A YOUR RECIPE HAS BEEN CREATED SUCCESS MESSAGE
         }catch(err){

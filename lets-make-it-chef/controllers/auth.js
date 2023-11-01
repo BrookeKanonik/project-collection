@@ -4,7 +4,7 @@ const User = require('../models/User')
 
   exports.getLogin = (req, res) => {
     if (req.user) {
-      return res.redirect('/home')
+      return res.redirect('/my-recipes')
     }
     res.render('login', {
       title: 'Login'
@@ -31,7 +31,7 @@ const User = require('../models/User')
       req.logIn(user, (err) => {
         if (err) { return next(err) }
         req.flash('success', { msg: 'Success! You are logged in.' })
-        res.redirect(req.session.returnTo || '/home')
+        res.redirect(req.session.returnTo || '/my-recipes')
       })
     })(req, res, next)
   }
@@ -49,7 +49,7 @@ const User = require('../models/User')
   
   exports.getSignup = (req, res) => {
     if (req.user) {
-      return res.redirect('/signup')
+      return res.redirect('/my-recipes')
     }
     res.render('signup', {
       title: 'Create Account'
@@ -82,15 +82,24 @@ const User = require('../models/User')
       console.log(existingUser);
       if(!existingUser) {
         await user.save(); //saves in db
-        res.redirect('/'); //returns to homepage
+        req.logIn(user, (err) => { //start added
+          if (err) {
+            return next(err)
+          }
+          //res.redirect('/')
+        }) //end added
+        res.redirect('/my-recipes'); //returns to homepage but should soon be their recipes
+
       } else {
         req.flash('errors', { msg: 'Account with that email address or username already exists.' })
         res.redirect('/signup');
       }
+
     }catch(err){
       console.log(err);
     }
     
+    //CURRENT ERROR: COMPARE TODO WITH MY-RECIPE ROUTES AS WITH ENSUREAUTH WE ARE GOING BACK TO THE HOMEPAGE
     
 
     // User.findOne({$or: [
@@ -113,10 +122,3 @@ const User = require('../models/User')
     //   })
     // })
   }
-      // user.save((err) => {
-      //   if (err) { return next(err) }
-      //   req.logIn(user, (err) => {
-      //     if (err) {
-      //       return next(err)
-      //     }
-      //     res.redirect('/home')
