@@ -2,7 +2,7 @@ const passport = require('passport')
 const validator = require('validator')
 const User = require('../models/User')
 
- exports.getLogin = (req, res) => {
+  exports.getLogin = (req, res) => {
     if (req.user) {
       return res.redirect('/home')
     }
@@ -10,7 +10,7 @@ const User = require('../models/User')
       title: 'Login'
     })
   }
-  
+
   exports.postLogin = (req, res, next) => {
     const validationErrors = []
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
@@ -56,7 +56,7 @@ const User = require('../models/User')
     })
   }
   
-  exports.postSignup = (req, res, next) => {
+  exports.postSignup = async (req, res, next) => {
     const validationErrors = []
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (!validator.isLength(req.body.password, { min: 8 })) validationErrors.push({ msg: 'Password must be at least 8 characters long' })
@@ -68,29 +68,55 @@ const User = require('../models/User')
     } //if anything is wrong, errors will show with a redirect to the page again
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
-    const user = new User({
-      userName: req.body.userName,
-      email: req.body.email,
-      password: req.body.password
-    })
-  
-    User.findOne({$or: [
-      {email: req.body.email},
-      {userName: req.body.userName}
-    ]}, (err, existingUser) => {
-      if (err) { return next(err) }
-      if (existingUser) {
+    try{
+      const user = new User({
+        userName: req.body.userName,
+        email: req.body.email,
+        password: req.body.password
+      });
+    
+      const existingUser = await User.findOne({$or: [
+        {email: req.body.email},
+        {userName: req.body.userName}
+      ]});
+      console.log(existingUser);
+      if(!existingUser) {
+        await user.save(); //saves in db
+        res.redirect('/'); //returns to homepage
+      } else {
         req.flash('errors', { msg: 'Account with that email address or username already exists.' })
-        return res.redirect('../signup')
+        res.redirect('/signup');
       }
-      user.save((err) => {
-        if (err) { return next(err) }
-        req.logIn(user, (err) => {
-          if (err) {
-            return next(err)
-          }
-          res.redirect('/home')
-        })
-      })
-    })
+    }catch(err){
+      console.log(err);
+    }
+    
+    
+
+    // User.findOne({$or: [
+    //   {email: req.body.email},
+    //   {userName: req.body.userName}
+    // ]}, (err, existingUser) => {
+    //   if (err) { return next(err) }
+    //   if (existingUser) {
+    //     req.flash('errors', { msg: 'Account with that email address or username already exists.' })
+    //     return res.redirect('../signup')
+    //   }
+    //   user.save((err) => {
+    //     if (err) { return next(err) }
+    //     req.logIn(user, (err) => {
+    //       if (err) {
+    //         return next(err)
+    //       }
+    //       res.redirect('/home')
+    //     })
+    //   })
+    // })
   }
+      // user.save((err) => {
+      //   if (err) { return next(err) }
+      //   req.logIn(user, (err) => {
+      //     if (err) {
+      //       return next(err)
+      //     }
+      //     res.redirect('/home')
