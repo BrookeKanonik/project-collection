@@ -81,18 +81,20 @@ const User = require('../models/User')
       ]});
       console.log(existingUser);
       if(!existingUser) {
-        await user.save(); //saves in db
+        await user.save(); //saves in db 
         req.logIn(user, (err) => { //start added
           if (err) {
+            console.log('ITS NOT WORKING! AUTH.JS')
             return next(err)
           }
-          //res.redirect('/')
+          console.log('WORKING?? AUTH.JS')
+          res.redirect('/my-recipes')
         }) //end added
-        res.redirect('/my-recipes'); //returns to homepage but should soon be their recipes
+        //res.redirect('/my-recipes'); //returns to homepage but should soon be their recipes
 
       } else {
         req.flash('errors', { msg: 'Account with that email address or username already exists.' })
-        res.redirect('/signup');
+        res.redirect('../signup');
       }
 
     }catch(err){
