@@ -7,10 +7,10 @@ const loginController = require('../controllers/login') //setting the path to th
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', loginController.getLogin) //when 
-router.get('/login', authController.getLogin)
-router.post('/login', authController.postLogin)
-router.get('/signup', authController.getSignup)
-router.post('/signup', authController.postSignup)
+// router.get('/login', authController.getLogin)
+router.post('/', authController.postLogin) //removed /login from the post route
+// router.get('/signup', authController.getSignup)
+// router.post('/signup', authController.postSignup)
 
 
 module.exports = router
