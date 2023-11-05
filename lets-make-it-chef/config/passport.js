@@ -26,20 +26,20 @@ module.exports = function (passport) {
     }))
   
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id)
-  })
+  // passport.serializeUser((user, done) => {
+  //   done(null, user.id)
+  // })
 
-  passport.deserializeUser( async (id, done) => {
-    try {
-        const user = User.findById(id)
-        return done(user)
-    }catch (err) {
-        console.error(err)
-        return done(err)
-        
-    }
-  }) //need to update, no longer accepts a callback
+  passport.serializeUser(function(user, done) {
+    process.nextTick(function() {
+    done(null, { id: user.id });
+  })
+});
+
+passport.deserializeUser(function(id, done) { process.nextTick(function() { return done(null, id); }); });
+
+  // passport.deserializeUser((id, done) => {
+  //   User.findById(id, (err, user) => done(err, user))
+  // })
 }
 
-//current issue is logging in and it directing you to login saying invalid email or password

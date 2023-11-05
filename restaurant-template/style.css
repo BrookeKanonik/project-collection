@@ -116,3 +116,7 @@ body, h1,h2, h3, h4, h5, h6 {
     height: 60px; /* hardcoding so it stays the same height even in mobile*/
     font-size: 1.8rem;
 }
+
+.food-happy {
+    text-align: center;
+}
