@@ -38,18 +38,18 @@
     <h1 class="addRecTitle">ADD RECIPE</h1>
     <p class="addRecPar">Want to add a recipe for the world to see? Simply enter the ingredients needed and the cooking instructions below</p>
     <div class="container">
-        <form action="addRecipe/addRecipe" method="POST">
+        <form action="/add-recipe/addRecipe" method="POST">
             <div id="formfield">
                 
-                <input type="text" name="instructions" class="text" size="50" placeholder="Instructions" required>
-                <input type="text" name="amount" class="text" size="50" placeholder="Amount" required>
-                <input type="text" name="ingredient" class="text" size="50" placeholder="Ingredient" required>
+                <input type="text" name="instructions" id="instructions" class="text" size="50" placeholder="Instructions">
+                <input type="text" name="amount" id="amount" class="text" size="50" placeholder="Amount">
+                <input type="text" name="ingredient" id="ingredient" class="text" size="50" placeholder="Ingredient">
                 
          
             </div>
         <button class="add" onclick="add()"><i class="fa fa-plus"></i> Add Ingredient </button>
         <button class="remove" onclick="remove()"><i class="fa fa-minus"></i> Remove Ingredient </button>
-        <input name="submit" type="Submit" value="Submit">
+        <input name="submit" type="submit" value="Upload">
       </form>
       </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
