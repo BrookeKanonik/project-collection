@@ -1,7 +1,7 @@
 const mongoose = require('mongoose') //setting up the criteria we will have. looking into what to do for ingredients (should it all be in one seperated by a comma or add a default if it is another field)
 
 const RecipesSchema = new mongoose.Schema({
-  ingredients: {
+  ingredient: {
     type: String,
     required: true,
   },
@@ -11,8 +11,12 @@ const RecipesSchema = new mongoose.Schema({
   },
   instructions: {
     type: String,
-    required: true,
-  }
+    required: true
+  },
+  userId: {
+    type: String,
+    required: true
+  } //ingredients and amounts may be duplicates in the future... need to figure out
 })
 
 module.exports = mongoose.model('Recipes', RecipesSchema)

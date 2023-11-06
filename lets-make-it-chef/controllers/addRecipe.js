@@ -1,4 +1,4 @@
-//const Recipes = require('../models/Recipes') we will use this when looking at other recipes
+const Recipes = require('../models/Recipes') //we will use this when looking at other recipes
 
 module.exports = {
     getAddRecipe: (req,res)=>{
@@ -7,9 +7,9 @@ module.exports = {
 
     addRecipe: async (req, res)=>{
         try{
-            await Todo.create({recipe: req.body}) //change Todo later
+            await Recipes.create({recipeInstructions: req.body.instructions, recipeIngredient: req.body.ingredient, recipeAmount: req.body.amount, userId: req.user.id}) //change Todo later
             console.log('Recipe Has Been Added!')
-            res.redirect('/') //CREATE A YOUR RECIPE HAS BEEN CREATED SUCCESS MESSAGE
+            res.redirect('/my-recipes') //CREATE A YOUR RECIPE HAS BEEN CREATED SUCCESS MESSAGE
         }catch(err){
             console.log(err)
         }

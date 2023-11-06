@@ -35,8 +35,19 @@
             </div>
         </nav>
     </header>
-    <div>
-        <h2>Welcome Back!</h2>
+    <div class="welcome-back">
+        <h2>Welcome Back, <%=user%>!</h2>
+        <p class="new-rec">To create a new recipe, click here</p>
+        <h2>My Recipes:</h2>
+        <ul>
+        <% recipes.forEach( el => { %>
+                <li class='recipeItem' data-id='<%=el._id%>'>
+                    <span class='del'> Delete </span>
+                </li>
+        <% }) %>    
+        </ul>
+    
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
