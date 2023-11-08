@@ -11,7 +11,7 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body >
     <header>
         <nav class="black darken-3">
             <div class="nav-wrapper container">
@@ -35,15 +35,31 @@
             </div>
         </nav>
     </header>
-    <div class="welcome-back">
-        <h2>Welcome Back, <%=user%>!</h2>
-        <p class="new-rec">To create a new recipe, click here</p>
+    
+    <div class="welcome-back pushIt">
+        <h1>Welcome Back! <%= info.userName %></h1>
+        <!-- compare to social media page on how to have the users above pull in properly by looking at controller as well -->
+        <p class="new-rec">To create a new recipe, click <a href="/add-recipe" class="click-here">here</a>!</p>
         <h2>My Recipes:</h2>
         <ul>
         <% recipes.forEach( el => { %>
                 <li class='recipeItem' data-id='<%=el._id%>'>
-                    <span class='del'> Delete </span>
+                    <span class="mainTitle"><%= el.title %></span>
+                    <span class="aTitle">Ingredients:</span>
+                    <span ><%= el.ingredient %></span>
+                    <span class="aTitle">Amount:</span>
+                    <span><%= el.amount %></span>
+                    <span class="aTitle">Instructions:</span>
+                    <span><%= el.instructions %></span>
+                    <form
+                    action=""
+                    method="POST"
+                    class="col-3"
+                  >
+                    <button type="submit" class='del'>Delete</button>
+                  </form>
                 </li>
+                <hr class="text-muted">
         <% }) %>    
         </ul>
     

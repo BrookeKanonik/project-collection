@@ -13,10 +13,22 @@ const RecipesSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  userId: {
+  title: {
     type: String,
     required: true
-  } //ingredients and amounts may be duplicates in the future... need to figure out
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  // userId: {
+  //   type: String,
+  //   required: true
+  // } //ingredients and amounts may be duplicates in the future... need to figure out
 })
 
 module.exports = mongoose.model('Recipes', RecipesSchema)

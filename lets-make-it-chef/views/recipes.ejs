@@ -35,8 +35,20 @@
             </div>
         </nav>
     </header>
-    <div>
-        <h2>Welcome Back!</h2>
+    <div class="pushIt">
+        <h2 class="centering">Look At All The Incredible Recipes We Have!</h2>
+        <% allRecipes.forEach( el => { %>
+            <li class='recipeItem' data-id='<%=el._id%>'>
+                <span class="mainTitle"><%= el.title %></span>
+                <span class="aTitle">Ingredients:</span>
+                <span ><%= el.ingredient %></span>
+                <span class="aTitle">Amount:</span>
+                <span><%= el.amount %></span>
+                <span class="aTitle">Instructions:</span>
+                <span><%= el.instructions %></span>
+            </li>
+            <hr class="text-muted">
+    <% }) %>   
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>

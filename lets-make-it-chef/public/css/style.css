@@ -237,3 +237,62 @@ input[type="Submit"]:hover{
 .loginHere {
     color: grey
 }
+
+.welcome-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-rec {
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+    padding: 10px 10px 10px 10px;
+}
+
+.recipeItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+.click-here {
+    color: red;
+    font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.aTitle {
+    font-size: 2em;
+    font-family: 'Homemade Apple', Georgia, 'Times New Roman', Times, serif;
+}
+
+.mainTitle {
+    font-size: 4em;
+    font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
+}
+
+.del {
+    color: red;
+    font-size: 2em;
+    font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.pushIt {
+    margin: 0 20%;
+}
+
+@media (max-width: 500px){
+    .pushIt {
+        margin: 0 8%;
+    }
+}
+
+.centering {
+    text-align: center;
+}

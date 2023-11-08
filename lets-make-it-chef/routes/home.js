@@ -4,7 +4,7 @@
 const express = require('express')
 const router = express.Router()
 const authController = require('../controllers/auth') 
-//const myRecipesController = require('../controllers/myRecipes') 
+const myRecipesController = require('../controllers/myRecipes') 
 const homeController = require('../controllers/home') //setting the path to the home.js in controller as homeController
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
@@ -15,6 +15,6 @@ router.get('/signup', authController.getSignup)
 router.post('/signup', authController.postSignup)
 router.get('/logout', authController.logout)
 //router.get('/my-recipes', ensureAuth, myRecipesController.getMyRecipes) //works bc its here??? takes to homepage
-
+router.get('/recipes', myRecipesController.getAllRecipes)
 
 module.exports = router

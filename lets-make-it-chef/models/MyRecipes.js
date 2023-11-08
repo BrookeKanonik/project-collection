@@ -1,3 +1,5 @@
+//NOT CURRENTLY USING
+
 const mongoose = require('mongoose')
 
 const MyRecipesSchema = new mongoose.Schema({
