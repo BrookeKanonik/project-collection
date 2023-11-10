@@ -6,7 +6,7 @@ Interactive e-commerce website built with react and django that uses a PAYPAL AP
 
 ## Lets Make It, Chef ( -- IN PROGRESS, LARGE PROJECT ) 
 
-Users can login and post recipes (including steps and ingredients) via a form. There will be a page where users can view uploaded recipes and add items that they currently do not have in their pantry to their shopping list (which will be a printable page). 
+Users can login and post recipes (including steps and ingredients) via a form. There will be a page where users can view uploaded recipes and type out items that they currently do not have in their pantry that they would like to add to their shopping list (which will be a printable page). 
 
 ## Movie Finder (movie-finder folder)
 
