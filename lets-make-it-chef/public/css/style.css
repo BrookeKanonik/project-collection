@@ -247,6 +247,7 @@ input[type="Submit"]:hover{
 .new-rec {
     background-color: rgb(231, 231, 231);
     box-shadow: 4px 4px 2px rgb(150,150,150);
+    border: 1px solid black;
     border-radius: 4px;
     padding: 10px 10px 10px 10px;
 }
@@ -257,6 +258,7 @@ input[type="Submit"]:hover{
     align-items: center;
     background-color: rgb(231, 231, 231);
     box-shadow: 4px 4px 2px rgb(150, 150, 150);
+    border: 1px solid black;
     border-radius: 4px;
     padding: 10px 10px 10px 10px;
     text-align: center;
@@ -297,4 +299,62 @@ input[type="Submit"]:hover{
 
 .centering {
     text-align: center;
+}
+
+.red-title {
+    font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 6em;
+    color: red;
+}
+
+.long-form {
+    height: 130px;
+}
+
+.black-title {
+    font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 6em;
+    color: black;
+}
+
+.black-hov:active, .black-hov:focus {
+    background-color: black;
+    border-radius: 4px;
+}
+
+.button-dist {
+    margin-top: 15%;
+}
+
+.form-item {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: red
+  }
+  .form-item:focus {
+    border-color: red;
+    outline: 1px dotted #000
+  }
+
+.button-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-button {
+    margin-top: 7%;
+}
+
+.loginHere {
+    /* font-family: 'Lobster',Georgia, 'Times New Roman', Times, serif; */
+    color: red;
+    /* font-size: 1.2em; */
+    font-weight: bold;
+}
+
+.new-return {
+    color: black;
+    /* font-family: 'Lobster',Georgia, 'Times New Roman', Times, serif; */
+    font-weight: bold;
 }

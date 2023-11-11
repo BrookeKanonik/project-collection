@@ -5,7 +5,7 @@ module.exports = {
     getMyRecipes: async (req,res)=>{
         //console.log(req.user)
         try{
-            const recipeItems = await Recipes.find({user: req.user.id}) //needs adjusting
+            const recipeItems = await Recipes.find({user: req.user.id}).sort({createdAt: "desc"}).lean() //needs adjusting
             const userInfo = await User.find({ _id: req.user.id })
             console.log(userInfo)
             console.log('IS IT WORKING??? USERINFO ABOVE?')

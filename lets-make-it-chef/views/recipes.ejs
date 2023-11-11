@@ -36,14 +36,14 @@
         </nav>
     </header>
     <div class="pushIt">
-        <h2 class="centering recipesTitle">Look At All The Incredible Recipes We Have!</h2>
+        <h2 class="centering red-title show-shadow">Check Out Our Recipes!</h2>
         <% allRecipes.forEach( el => { %>
             <li class='recipeItem' data-id='<%=el._id%>'>
                 <span class="mainTitle"><%= el.title %></span>
                 <span class="aTitle">Ingredients:</span>
                 <span ><%= el.ingredient %></span>
-                <span class="aTitle">Amount:</span>
-                <span><%= el.amount %></span>
+                <!-- <span class="aTitle">Amount:</span>
+                <span><%= el.amount %></span> -->
                 <span class="aTitle">Instructions:</span>
                 <span><%= el.instructions %></span>
             </li>

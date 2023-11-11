@@ -12,6 +12,7 @@ const loginRoutes = require('./routes/login')
 const signupRoutes = require('./routes/signup')
 const addRecipeRoutes = require('./routes/addRecipe')
 const myRecipeRoutes = require('./routes/myRecipes')
+const myListRoutes = require('./routes/myList')
 
 require('dotenv').config({path: './config/.env'}) //use env and where to find it 
 
@@ -47,6 +48,7 @@ app.use('/login', loginRoutes) //when clicked on will take to loginRoutes
 app.use('/signup', signupRoutes) //when clicked on will take to loginRoutes //may need to get rid of in future
 app.use('/add-recipe', addRecipeRoutes) //will create to have users create recipes. first part of parameters is what the url will have. can make it whatever //may need to get rid of in future
 app.use('/my-recipes', myRecipeRoutes)
+app.use('/list', myListRoutes)
 //is before the current error i am having. GET /my-recipes showing as 500
 
 app.listen(process.env.PORT, ()=>{

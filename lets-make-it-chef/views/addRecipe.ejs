@@ -35,21 +35,18 @@
             </div>
         </nav>
     </header>
-    <h1 class="addRecTitle">ADD RECIPE</h1>
+    <h1 class="black-title centering">Add Recipe</h1>
     <p class="addRecPar">Want to add a recipe for the world to see? Simply enter the ingredients needed and the cooking instructions below</p>
     <div class="container">
         <form action="/add-recipe/addRecipe" method="POST">
-            <div id="formfield">
-
-                <input type="text" name="title" id="title" class="text" size="50" placeholder="Title">
-                <input type="text" name="instructions" id="instructions" class="text" size="50" placeholder="Instructions">
-                <input type="text" name="amount" id="amount" class="text" size="50" placeholder="Amount">
-                <input type="text" name="ingredient" id="ingredient" class="text" size="50" placeholder="Ingredient">
-                
-         
+            <div id="formfield">          
+                <input type="text" name="title" id="title" class="text form-item" size="50" placeholder="Title">
+                <textarea type="text" name="ingredient" id="ingredient" class="text long-form" size="50" placeholder="Ingredients"></textarea>
+                <textarea type="text" name="instructions" id="instructions" class="text long-form" size="50" placeholder="Instructions"></textarea>
+                <!-- <input type="text" name="amount" id="amount" class="text" size="50" placeholder="Amount"> -->        
             </div>
-        <button class="add" onclick="add()"><i class="fa fa-plus"></i> Add Ingredient </button>
-        <button class="remove" onclick="remove()"><i class="fa fa-minus"></i> Remove Ingredient </button>
+        <!-- <button class="add" onclick="add()"><i class="fa fa-plus"></i> Add Ingredient </button>
+        <button class="remove" onclick="remove()"><i class="fa fa-minus"></i> Remove Ingredient </button> -->
         <input name="submit" type="submit" value="Upload">
       </form>
       </div>

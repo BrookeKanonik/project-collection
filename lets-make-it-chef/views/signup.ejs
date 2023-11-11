@@ -24,7 +24,7 @@
                             <li><a href="/login" id="links">Login</a></li>
                             <li><a href="/recipes" id="links">Recipe Homepage</a></li>
                             <li><a href="/my-recipes" id="links">My Recipes</a></li>
-                            <li><a href="/list" id="links">My Shopping List</a></li>
+                            <li><a href="myList/list" id="links">My Shopping List</a></li>
                         </div>
                         <div id="nav-options">
                             <li><a href="/logout" id="links">Logout</a></li>
@@ -50,7 +50,7 @@
         </div>   
     </div>
     
-    <p class="loginPar">Have an account? Please login <a href="/login" class="loginHere">here</a>!</p>
+    <p class="loginPar"><span class="new-return">Have an account?</span> Please login <a href="/login" class="loginHere">here</a>!</p>
     </div>
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>

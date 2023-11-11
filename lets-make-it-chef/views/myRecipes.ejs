@@ -37,18 +37,18 @@
     </header>
     
     <div class="welcome-back pushIt">
-        <h1 class="welcomeTitle">Welcome Back! <%= info.userName %></h1>
+        <h1 class="welcomeTitle black-title centering">Welcome Back! <%= info.userName %></h1>
         <!-- compare to social media page on how to have the users above pull in properly by looking at controller as well -->
         <p class="new-rec">To create a new recipe, click <a href="/add-recipe" class="click-here">here</a>!</p>
-        <h2>My Recipes:</h2>
+        <h2 class="red-title">My Recipes:</h2>
         <ul>
         <% recipes.forEach( el => { %>
                 <li class='recipeItem' data-id='<%=el._id%>'>
                     <span class="mainTitle"><%= el.title %></span>
                     <span class="aTitle">Ingredients:</span>
                     <span ><%= el.ingredient %></span>
-                    <span class="aTitle">Amount:</span>
-                    <span><%= el.amount %></span>
+                    <!-- <span class="aTitle">Amount:</span>
+                    <span><%= el.amount %></span> -->
                     <span class="aTitle">Instructions:</span>
                     <span><%= el.instructions %></span>
                     <form
@@ -56,7 +56,7 @@
                     method="POST"
                     class="col-3"
                   >
-                    <button type="submit" class='del'>Delete</button>
+                    <button type="submit" class='del black-hov button-dist'>Delete</button>
                   </form>
                 </li>
                 <hr class="text-muted">
