@@ -1,3 +1,4 @@
+const cloudinary = require("../middleware/cloudinary");
 const Recipes = require('../models/Recipes') //we will use this when looking at other recipes
 
 module.exports = {
@@ -7,7 +8,8 @@ module.exports = {
 
     addRecipe: async (req, res)=>{
         try{
-            await Recipes.create({instructions: req.body.instructions, ingredient: req.body.ingredient,  user: req.user.id, title: req.body.title}) //change Todo later //amount: req.body.amount,
+            const result = await cloudinary.uploader.upload(req.file.path);
+            await Recipes.create({instructions: req.body.instructions.trim().split('\n'), ingredient: req.body.ingredient.trim().split('\n'),  user: req.user.id, title: req.body.title, image: result.secure_url, cloudinaryId: result.public_id}) //change Todo later //amount: req.body.amount,
             console.log('Recipe Has Been Added!')
             res.redirect('/my-recipes') //CREATE A YOUR RECIPE HAS BEEN CREATED SUCCESS MESSAGE
         }catch(err){

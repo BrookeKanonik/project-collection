@@ -1,3 +1,4 @@
+const cloudinary = require("../middleware/cloudinary");
 const Recipes = require('../models/Recipes')
 const User = require('../models/User') //MAYBE GET THE USERNAME THIS WAY??
 
@@ -26,5 +27,21 @@ module.exports = {
             console.log(err);
         }
 
-    }
+    },
+    deleteRecipe: async (req,res) =>{
+        try {
+            // Find post by id
+            let recipe = await Recipes.findById({ _id: req.params.id });
+            // Delete image from cloudinary
+            await cloudinary.uploader.destroy(recipe.cloudinaryId);
+            // Delete post from db
+            await Recipes.deleteOne({ _id: req.params.id });
+            console.log("Deleted Post");
+            res.redirect("/my-recipes");
+          } catch (err) {
+            res.redirect("/recipes");
+            console.log(err)
+            //is an error so it is coming here for the delete button. will check out.
+          }
+        },
 }

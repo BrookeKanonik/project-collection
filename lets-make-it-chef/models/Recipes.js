@@ -2,15 +2,19 @@ const mongoose = require('mongoose') //setting up the criteria we will have. loo
 
 const RecipesSchema = new mongoose.Schema({
   ingredient: {
-    type: String,
+    type: [String],
     required: true,
   },
-  // amount: {
-  //   type: String,
-  //   required: true,
-  // },
-  instructions: {
+  image: {
     type: String,
+    require: true,
+  },
+  cloudinaryId: {
+    type: String,
+    require: true,
+  },
+  instructions: {
+    type: [String],
     required: true
   },
   title: {

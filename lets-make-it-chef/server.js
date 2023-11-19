@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session) //for session cookies
+const methodOverride = require("method-override");
 const flash = require('express-flash') //storimg sessions in db
 const logger = require('morgan') //shows terminal history
 const connectDB = require('./config/database')
@@ -26,6 +27,9 @@ app.use(express.static('public')) //using our items in the public folder
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json()) //pull things we need out of requests aka forms for example
 app.use(logger('dev')) //set up morgan to run
+
+//Use forms for put / delete
+app.use(methodOverride("_method"));
 
 // Sessions
 app.use(

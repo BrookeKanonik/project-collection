@@ -35,11 +35,13 @@
             </div>
         </nav>
     </header>
+
     <div class="pushIt">
         <h2 class="centering red-title show-shadow">Check Out Our Recipes!</h2>
         <% allRecipes.forEach( el => { %>
             <li class='recipeItem' data-id='<%=el._id%>'>
                 <span class="mainTitle"><%= el.title %></span>
+                <img class="img-fluid picture" src="<%= el.image%>" />
                 <span class="aTitle">Ingredients:</span>
                 <span ><%= el.ingredient %></span>
                 <!-- <span class="aTitle">Amount:</span>
@@ -49,7 +51,7 @@
             </li>
             <hr class="text-muted">
     <% }) %>   
-    </div>
+    </div> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         M.Sidenav.init(document.querySelector('.sidenav'))
