@@ -255,13 +255,18 @@ input[type="Submit"]:hover{
 .recipeItem {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     background-color: rgb(231, 231, 231);
     box-shadow: 4px 4px 2px rgb(150, 150, 150);
     border: 1px solid black;
     border-radius: 4px;
     padding: 10px 10px 10px 10px;
-    text-align: center;
+    /* text-align: center; */
+}
+
+.ingredientItem {
+    margin-left: 4%;
+    text-align: justify;
 }
 
 .click-here {
@@ -273,8 +278,21 @@ input[type="Submit"]:hover{
 .aTitle {
     font-size: 2em;
     font-family: 'Homemade Apple', Georgia, 'Times New Roman', Times, serif;
+    margin: 6% 0 6% 3%;
+
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid black; 
+    line-height: 0.1em;
+    margin: 10px 0 20px 0; 
+    margin-top: 8%;
+    margin-bottom: 4%;
 }
 
+.aTitle span {
+    background: rgb(231, 231, 231); 
+    padding:0 10px; 
+}
 .mainTitle {
     font-size: 4em;
     font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
@@ -322,8 +340,14 @@ input[type="Submit"]:hover{
     border-radius: 4px;
 }
 
-.button-dist {
-    margin-top: 15%;
+.button-dist { 
+    margin-top: 10%;
+}
+
+.buttonCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form-item {
@@ -360,10 +384,11 @@ input[type="Submit"]:hover{
 }
 
 .picture {
-    height: 500px;
+    height: auto;
     width: 600px;
     border: 2px solid grey;
     border-radius: 4px;
     margin-bottom: 2%;
     margin-top: 1%;
 }
+
