@@ -34,7 +34,7 @@
 }
 
 .bg-img {
-    background-image: url('../assets/pasta.avif');
+    background-image: url('../assets/pasta.png');
     /* cover is used in this case to see more of the image. without it it is more zoomed in*/
     background-size: cover; 
     background-position: center;
