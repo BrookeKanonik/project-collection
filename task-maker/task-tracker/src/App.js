@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -37,11 +38,11 @@ const toggleReminder = (id) => {
   setTasks(tasks.map((task) => task.id === id ? {...task, reminder : !task.reminder} : task))
 }
 
-
+ // && shorter way of doing a ternary without an else
   return (
     <div className="container">
-      <Header/>
-      <AddTask onAdd ={addTask} />
+      <Header onAdd ={() => setShowAddTask (!showAddTask)} showAdd = {showAddTask}/>
+      {showAddTask && <AddTask onAdd ={addTask} />} 
       { tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> : 'No Tasks To Show'}
     </div>
   );
