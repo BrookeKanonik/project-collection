@@ -1,10 +1,10 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "eat food",
+      "text": "something here",
       "day": "today",
-      "reminder": false
+      "reminder": true,
+      "id": 1
     }
   ]
 }
