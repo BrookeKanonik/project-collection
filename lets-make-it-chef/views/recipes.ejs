@@ -36,18 +36,24 @@
         </nav>
     </header>
 
-    <div class="pushIt">
+    <div class="welcome-back pushIt">
         <h2 class="centering red-title show-shadow">Check Out Our Recipes!</h2>
         <% allRecipes.forEach( el => { %>
             <li class='recipeItem' data-id='<%=el._id%>'>
-                <span class="mainTitle"><%= el.title %></span>
+                <span class="mainTitle centering"><%= el.title %></span>
                 <img class="img-fluid picture" src="<%= el.image%>" />
-                <span class="aTitle">Ingredients:</span>
-                <span ><%= el.ingredient %></span>
+                <h3 class="aTitle ingreTitle"><span>Ingredients:</span></h3>
+                <% for(var i=0; i<el.ingredient.length; i++) {%>
+                    <span class="ingredientItem">- <%= el.ingredient[i] %></span>
+                <% } %>
                 <!-- <span class="aTitle">Amount:</span>
                 <span><%= el.amount %></span> -->
-                <span class="aTitle">Instructions:</span>
-                <span><%= el.instructions %></span>
+                <h3 class="aTitle"><span>Instructions:</span></h3>
+                <ol>
+                    <% for(var i=0; i<el.instructions.length; i++) {%>
+                        <li> <%= el.instructions[i] %></li>
+                    <% } %>
+                </ol>
             </li>
             <hr class="text-muted">
     <% }) %>   

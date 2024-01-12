@@ -7,7 +7,7 @@ module.exports = function (passport) {
     try{
         const user = await User.findOne({ email: email.toLowerCase() })
         if (!user) {
-            return done(null, false, { msg: `Email ${email} not found.` })
+            return done(null, false, { msg: `Email ${email} not found.`})
               }
             if (!user.password) {
                 return done(null, false, { msg: 'Your account was registered using a sign-in provider. To enable password login, sign in using a provider, and then set a password under your user profile.' })
