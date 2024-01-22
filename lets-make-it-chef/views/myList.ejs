@@ -40,7 +40,7 @@
         <!-- add for each loop looping through your list -->
     
         <div class="container">
-            <form action="/list/addItem" method="POST"></form>
+            <form action="/list/addItem" method="POST">
                 <div id="formfield">
                     <input type="text" placeholder="Item" name="groceryItem">
                     
@@ -52,16 +52,12 @@
         </div>
 
         <ul class="shoppingItems">
-            <% for(let i=0; i < items.length; i++) {%>
-                <li class="item">
-                    <% if(items[i].completed === true) {%>
-                        <span class='completed'><%= items[i].thing %></span>
-                    <% }else{ %>
-                        <span><%= items[i].thing %></span>
-                    <% } %>    
-                    <span class='fa fa-trash'></span>
+            <% items.forEach( el => { %>
+                <li class='todoItem' data-id='<%=el._id%>'>
+                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.item %></span>
+                    <span class='del'> Delete </span>
                 </li>
-            <% } %>
+        <% }) %>    
         </ul>
     </div>
 
