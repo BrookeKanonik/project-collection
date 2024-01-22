@@ -37,7 +37,7 @@
     </header>
 
     <div class="welcome-back pushIt">
-        <h2 class="centering red-title show-shadow">Check Out Our Recipes!</h2>
+        <h2 class="centering red-title show-shadow recTitle ourRec"><span>Our Recipes:</span></h2>
         <% allRecipes.forEach( el => { %>
             <li class='recipeItem' data-id='<%=el._id%>'>
                 <span class="mainTitle centering"><%= el.title %></span>

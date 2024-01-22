@@ -40,9 +40,9 @@
         <!-- add for each loop looping through your list -->
     
         <div class="container">
-            <form action="" method="POST"></form>
+            <form action="/list/addItem" method="POST"></form>
                 <div id="formfield">
-                    <input type="text" placeholder="Item">
+                    <input type="text" placeholder="Item" name="groceryItem">
                     
                 </div>
                 <div class="button-center addButton">
@@ -50,7 +50,21 @@
                 </div>             
             </form>
         </div>
+
+        <ul class="shoppingItems">
+            <% for(let i=0; i < items.length; i++) {%>
+                <li class="item">
+                    <% if(items[i].completed === true) {%>
+                        <span class='completed'><%= items[i].thing %></span>
+                    <% }else{ %>
+                        <span><%= items[i].thing %></span>
+                    <% } %>    
+                    <span class='fa fa-trash'></span>
+                </li>
+            <% } %>
+        </ul>
     </div>
+
   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
