@@ -42,35 +42,38 @@
         <span class="new-rec"><a href="/add-recipe" class="new-rec-dir" >Add Recipe</a></span>
         <h2 class="red-title recTitle"><span>My Recipes:</span></h2>
         <ul>
-        <% recipes.forEach( el => { %>
-                <li class='recipeItem' data-id='<%=el.id%>'>
-                    <span class="mainTitle centering"><%= el.title %></span>
-                    <img class="img-fluid picture" src="<%= el.image%>" />
-                    <h3 class="aTitle ingreTitle"><span>Ingredients:</span></h3>
-                    <% for(var i=0; i<el.ingredient.length; i++) {%>
-                        <span class="ingredientItem">- <%= el.ingredient[i] %></span>
-                    <% } %>
-                    <!-- <span class="aTitle">Amount:</span>
-                    <span><%= el.amount %></span> -->
-                    <h3 class="aTitle"><span>Instructions:</span></h3>
-                    <ol>
-                        <% for(var i=0; i<el.instructions.length; i++) {%>
-                            <li> <%= el.instructions[i] %></li>
+            <div>
+                <% recipes.forEach( el => { %>
+                    <li class='recipeItem' data-id='<%=el.id%>'>
+                        <span class="mainTitle centering"><%= el.title %></span>
+                        <img class="img-fluid picture" src="<%= el.image%>" />
+                        <h3 class="aTitle ingreTitle"><span>Ingredients:</span></h3>
+                        <% for(var i=0; i<el.ingredient.length; i++) {%>
+                            <span class="ingredientItem">- <%= el.ingredient[i] %></span>
                         <% } %>
-                    </ol>
-                    <form
-                    action="my-recipes/deletePost/<%= el._id%>?_method=DELETE"
-                    method="POST"
-                    class="col-3"
-                  >
-                  <div class="buttonCenter">
-                    <input type="submit" value="Delete">
-                  </div>
-                    
-                  </form>
-                </li>
-                <hr class="text-muted">
-        <% }) %>    
+                        <!-- <span class="aTitle">Amount:</span>
+                        <span><%= el.amount %></span> -->
+                        <h3 class="aTitle"><span>Instructions:</span></h3>
+                        <ol>
+                            <% for(var i=0; i<el.instructions.length; i++) {%>
+                                <li> <%= el.instructions[i] %></li>
+                            <% } %>
+                        </ol>
+                        <form
+                        action="my-recipes/deletePost/<%= el._id%>?_method=DELETE"
+                        method="POST"
+                        class="col-3"
+                      >
+                      <div class="buttonCenter">
+                        <input type="submit" value="Delete">
+                      </div>
+                        
+                      </form>
+                    </li>
+                    <br>
+            <% }) %>    
+            </div>
+        
         </ul>
     
 

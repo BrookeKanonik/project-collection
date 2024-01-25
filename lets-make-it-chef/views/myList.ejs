@@ -54,8 +54,23 @@
         <ul class="shoppingItems">
             <% items.forEach( el => { %>
                 <li class='todoItem' data-id='<%=el._id%>'>
-                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.item %></span>
-                    <span class='del'> Delete </span>
+                    <div class="organize">
+                        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.item %></span>
+                        <div>
+                            <form
+                            action="list/deleteItem/<%= el._id%>?_method=DELETE"
+                            method="POST"
+                            class="col-3"
+                          >
+                          <div class="listButton">                          
+                            <input type="submit" value=" X " class="submitButton">
+                          </div>
+                            
+                          </form>
+                        </div>
+                       
+                    </div>
+                   
                 </li>
         <% }) %>    
         </ul>
