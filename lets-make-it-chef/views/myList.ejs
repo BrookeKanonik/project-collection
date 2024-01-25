@@ -56,17 +56,24 @@
                 <li class='todoItem' data-id='<%=el._id%>'>
                     <div class="organize">
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.item %></span>
-                        <div>
-                            <form
-                            action="list/deleteItem/<%= el._id%>?_method=DELETE"
-                            method="POST"
-                            class="col-3"
-                          >
-                          <div class="listButton">                          
-                            <input type="submit" value=" X " class="submitButton">
-                          </div>
-                            
-                          </form>
+                        <div class="insideDiv">
+                            <div></div>
+                            <div>
+                                <form
+                                action="list/deleteItem/<%= el._id%>?_method=DELETE"
+                                method="POST"
+                                class="col-3"
+                              >
+                              <div class="listButton">                          
+                                <button type="submit" id="completed-task" class="fabutton">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                              </div>
+                                
+                              </form>
+                            </div>
+                            <div></div>
+                          
                         </div>
                        
                     </div>
