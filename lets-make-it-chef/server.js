@@ -15,7 +15,7 @@ const addRecipeRoutes = require('./routes/addRecipe')
 const myRecipeRoutes = require('./routes/myRecipes')
 const myListRoutes = require('./routes/myList')
 
-require('dotenv').config({path: './config/.env'}) //use env and where to find it 
+require('dotenv').config() //use env and where to find it //{path: './config/.env'} NEEDS TO BE INSIDE PARENTHESIS 
 
 // Passport config
 require('./config/passport')(passport)

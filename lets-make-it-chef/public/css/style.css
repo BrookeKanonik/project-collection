@@ -144,7 +144,14 @@ footer > section > p {
     font-size: 1.5em;
 }
 
+.spacingRec {
+    width: 700px;
+}
 
+
+.myRec {
+    margin-bottom: 5%;
+}
 
   
 /* .container {
@@ -437,8 +444,8 @@ input[type="Submit"]:hover{
 }
 
 .welcomeTitle {
-    margin-top: 6%;
-    margin-bottom: 6%;
+    /* margin-top: 6%; */
+    margin-bottom: 2%;
 }
 
 
@@ -452,7 +459,7 @@ input[type="Submit"]:hover{
     border-bottom: 1px solid red; 
     line-height: 0.1em;
     margin: 10px 0 20px 0; 
-    margin-top: 8%;
+    margin-top: 4.6%;
     margin-bottom: 4%;
 }
 
@@ -481,6 +488,31 @@ input[type="Submit"]:hover{
     h3 .ingreTitle {
         margin-bottom: 8%;
     }
+    .recTitle {
+        /* font-size: 2em; */
+        /* font-family: 'Homemade Apple', Georgia, 'Times New Roman', Times, serif; */
+    
+        margin-top: 8%;
+        margin-bottom: 4%;
+    }
+    .ourRec {
+        margin-bottom: 5%;
+        
+    }
+    .welcomeTitle {
+        /* margin-top: 6%; */
+        margin-bottom: 6%;
+    }
+    .mainTitle {
+        font-size: 3.2em;
+        font-family: 'Lobster', Georgia, 'Times New Roman', Times, serif;
+    }
+    .spacingRec {
+        margin-top: 4%;
+        width: auto;
+    }
+    
+    
 }
 
 .addButton {
@@ -496,7 +528,7 @@ ol li {
 } */
 
 .ourRec {
-    margin-bottom: 5%;
+    margin-bottom: 4.4%;
     
 }
 
@@ -550,3 +582,9 @@ input[class="submitButton"] {
     flex-direction: column;
     gap: 13px;
 }
+
+.listItem {
+    font-family:'Homemade Apple', Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+}
+

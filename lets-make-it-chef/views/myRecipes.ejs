@@ -40,9 +40,9 @@
         <h1 class="welcomeTitle black-title centering">Welcome Back! <%= info.userName %></h1>
         <!-- compare to social media page on how to have the users above pull in properly by looking at controller as well -->
         <span class="new-rec"><a href="/add-recipe" class="new-rec-dir" >Add Recipe</a></span>
-        <h2 class="red-title recTitle"><span>My Recipes:</span></h2>
-        <ul>
-            <div>
+        <h2 class="red-title recTitle "><span>My Recipes:</span></h2>
+        <ul class="myRec">
+            <div class="spacingRec">
                 <% recipes.forEach( el => { %>
                     <li class='recipeItem' data-id='<%=el.id%>'>
                         <span class="mainTitle centering"><%= el.title %></span>
