@@ -4,9 +4,10 @@
 
 Interactive e-commerce website built with react and django that uses a PAYPAL API. Admins can add products, update shipping for customer's orders and more! Customers can see when items are out of stock, rate products, and pay for goods with either PAYPAL or a credit card.
 
-## Lets Make It, Chef ( -- IN PROGRESS, LARGE PROJECT ) 
+## Lets Make It, Chef ( LARGE PROJECT --  INITIAL RUN FINISHED ) 
 
 Users can login and post recipes (including steps and ingredients) via a form. There will be a page where users can view uploaded recipes and type out items that they currently do not have in their pantry that they would like to add to their shopping list (which will be a printable page). 
+https://lets-make-it-chef.onrender.com/
 
 ## Movie Finder (movie-finder folder)
 
