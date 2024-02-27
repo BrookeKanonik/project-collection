@@ -15,8 +15,9 @@ const PlaceList = props => {
             </div>
         )
     }
-    return <ul className="place-list">
-        {props.item.map(place => 
+    return (
+    <ul className="place-list">
+        {props.items.map(place => (
         <PlaceItem 
             key={place.id} 
             id={place.id} 
@@ -26,8 +27,10 @@ const PlaceList = props => {
             address={place.address} 
             creatorId={place.creator} 
             coordinates={place.location}
-        />)}
+        />
+        ))}
     </ul>
+    )
 }
 
 export default PlaceList;
