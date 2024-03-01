@@ -21,3 +21,6 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+API-KEY = 
+make seperate file and link to it. may want to ref previous projects
