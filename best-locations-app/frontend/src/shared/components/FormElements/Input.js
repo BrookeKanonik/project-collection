@@ -25,9 +25,9 @@ const inputReducer = (state, action) => {
 
 const Input = props => {
     const [inputState, dispatch] = useReducer(inputReducer, {
-        value: '', 
+        value: props.initialValue || '', //can be a value provided from outside
         isTouched: false, //set to false initially 
-        isValid: false
+        isValid: props.initialValid || false //setting or as it can be provided from  outside
     });
 
     //going to pull out the relevant pieces with object destructuring. so for useEffect, instead of having props.onInput you can do just onInput
