@@ -18,11 +18,16 @@ const formReducer = (state, action) => {
                     [action.inputId] : { value: action.value, isValid: action.isValid}
                 },
                 isValid: formIsValid
-            }
+            };
+            case 'SET_DATA':
+                return {
+                    inputs: action.inputs, //overrides existing state
+                    isValid: action.formIsValid
+                }
         default:
             return state;
         
-    }
+    } //must handle setFormData that we added from below 
 };
 
 
@@ -36,5 +41,13 @@ export const useForm = (initialInputs, initialFormValidity) => {
         dispatch({type: 'INPUT_CHANGE', value: value, isValid: isValid, inputId: id}) //where we want to dispatch a new action
     }, [])
 
-    return [formState, inputHandler]
+    const setFormData = useCallback((inputData, formValidity) => {
+        dispatch({
+            type: 'SET_DATA',
+            inputs: inputData,
+            formIsValid: formValidity
+        })
+    }, [] /* dependencies in []*/)
+
+    return [formState, inputHandler, setFormData] //setFormData will also be returned in this array 
 } //exporting our own hook
