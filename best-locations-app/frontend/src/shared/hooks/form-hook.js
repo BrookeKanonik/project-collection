@@ -5,6 +5,9 @@ const formReducer = (state, action) => {
         case 'INPUT_CHANGE': 
             let formIsValid = true; //helper variable 
             for (const inputId in state.inputs) { //go through all the inputs in the state below in newplace
+                if (!state.inputs[inputId]){
+                    continue; //get out of this for loop and go to the next iteration
+                }
                 if (inputId === action.inputId){ //looking at if the input is getting updated
                     formIsValid = formIsValid && action.isValid;
                 } else { //if it is not getting updated...
