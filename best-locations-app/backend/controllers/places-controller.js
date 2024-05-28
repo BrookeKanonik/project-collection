@@ -54,13 +54,7 @@ const createPlace = async  (req, res, next) => { //expect to have data in the bo
     if (!errors.isEmpty()){
         return next (new HttpError('Invalid inputs passed, please check your data', 422)) //cannot do throw if it is async code
     }
-    const {title, description, address, creator} = req.body //destructuring which does. used to have coordinates here
-    let coordinates;
-    try{
-        const coordinates = await getCoordsForAddress(address) //await as it is returning a promise
-    }catch (error){
-        return next(error); //want to stop if we get an error, so we need to return
-    }
+    const {title, description, coordinates, address, creator} = req.body //destructuring which does. used to have coordinates here
     
     //const title = req.body.title;
     const createdPlace = {
@@ -110,3 +104,5 @@ exports.getPlacesByUserId = getPlacesByUserId;
 exports.createPlace = createPlace;
 exports.updatePlace = updatePlace;
 exports.deletePlace = deletePlace;
+
+//might need to adjust more of data to work
