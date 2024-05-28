@@ -1,8 +1,10 @@
 //has the middleware contained
 const { v4: uuidv4 } = require('uuid');
+const {validationResult} = require('express-validator')
 
 const HttpError = require('../models/http-error') //adding this as we are using it further down the file
 // const { get } = require('../routes/places-routes')
+const getCoordsForAddress = require('../util/location')
 
 
 //have to move dummy data here as this is where we interact with it
@@ -47,8 +49,19 @@ const getPlacesByUserId = (req,res,next) => {
     res.json({places})
 }
 
-const createPlace = (req, res, next) => { //expect to have data in the body 
-    const {title, description, coordinates, address, creator} = req.body //destructuring which does
+const createPlace = async  (req, res, next) => { //expect to have data in the body 
+    const errors = validationResult(req)
+    if (!errors.isEmpty()){
+        return next (new HttpError('Invalid inputs passed, please check your data', 422)) //cannot do throw if it is async code
+    }
+    const {title, description, address, creator} = req.body //destructuring which does. used to have coordinates here
+    let coordinates;
+    try{
+        const coordinates = await getCoordsForAddress(address) //await as it is returning a promise
+    }catch (error){
+        return next(error); //want to stop if we get an error, so we need to return
+    }
+    
     //const title = req.body.title;
     const createdPlace = {
         id: uuidv4(),
@@ -65,6 +78,10 @@ const createPlace = (req, res, next) => { //expect to have data in the body
 }
 
 const updatePlace = (req, res, next) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()){
+        throw new HttpError('Invalid inputs passed, please check your data', 422)
+    }
     //for a patch request, you also have a body
     const {title, description} = req.body;
     //we need the id that needs to be updated as well 
@@ -82,6 +99,9 @@ const updatePlace = (req, res, next) => {
 
 const deletePlace = (req, res, next) => {
     const placeId = req.params.pid
+    if (!DUMMY_PLACES.find(p=> p.id === placeId)){
+        throw new HttpError('Could not find a place for that id', 404)
+    }
     DUMMY_PLACES = DUMMY_PLACES.filter(p => placeId !== p.id)
     res.status(200).json({message: 'deleted place'})
 }
