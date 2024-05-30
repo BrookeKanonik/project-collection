@@ -14,7 +14,7 @@ const Home = () => {
         </div>
         <div className='home-text-section'>
           <h1 className='primary-heading'>
-            The Best Ramen You Might Ever Have! See What Our Customers Say!
+            We Can't Stop Raving About This Ramen
           </h1>
           <p className='primary-text'>
             Made with the finest of ingredients locally sourced (or specially flown in depending on the season!), Raving Ramen is something to truly rave about.
