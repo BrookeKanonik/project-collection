@@ -1,5 +1,6 @@
 const express = require('express') //require a package then store it in a variable
 const bodyParser = require('body-parser') //parse body of incoming requests
+const mongoose = require('mongoose')
 
 const placesRoutes = require('./routes/places-routes')
 const userRoutes = require('./routes/users-routes')
@@ -29,5 +30,12 @@ app.use((error, req, res, next) => { //4 params = first will be an error
     res.json({message: error.message || 'An unknown error has occurred'});
 })
 
-
-app.listen(5000);
+mongoose
+    .connect(' UPDATING')
+    .then(() => {
+        app.listen(5000);
+        console.log('connected to db!')
+    })
+    .catch(err => {
+        console.log(err)
+    });

@@ -5,6 +5,7 @@ const {validationResult} = require('express-validator')
 const HttpError = require('../models/http-error') //adding this as we are using it further down the file
 // const { get } = require('../routes/places-routes')
 const getCoordsForAddress = require('../util/location')
+const Place = require('../models/place')
 
 
 //have to move dummy data here as this is where we interact with it
@@ -54,19 +55,36 @@ const createPlace = async  (req, res, next) => { //expect to have data in the bo
     if (!errors.isEmpty()){
         return next (new HttpError('Invalid inputs passed, please check your data', 422)) //cannot do throw if it is async code
     }
-    const {title, description, coordinates, address, creator} = req.body //destructuring which does. used to have coordinates here
-    
+    const {title, description, address, creator} = req.body //destructuring which does. used to have coordinates here
+    let coordinates = {};
+    try{
+        coordinates = await getCoordsForAddress(address) //await as it is returning a promise
+        console.log(coordinates)
+    }catch (error){
+        return next(error); //want to stop if we get an error, so we need to return
+    }
+    console.log(coordinates)
     //const title = req.body.title;
-    const createdPlace = {
-        id: uuidv4(),
-        title: title,
-        description: description,
-        location: coordinates, 
-        address: address,
-        creator: creator
-    };
+    const createdPlace = new Place({
+        title, 
+        description,
+        address,
+        location: coordinates,
+        image: 'https://assets.simpleviewinc.com/simpleview/image/upload/crm/newyorkstate/GettyImages-486334510_CC36FC20-0DCE-7408-77C72CD93ED4A476-cc36f9e70fc9b45_cc36fc73-07dd-b6b3-09b619cd4694393e.jpg',
+        creator
+    });
+    try {
+        await createdPlace.save(); //handles the mongoDB items and creates the places id and is async
+    }catch(err){
+        const error = new HttpError(
+            'Creating place failed, please try again.',
+            500
+        )
+        return next(error) //stop code execution incase there is an error
+    }
+   
 
-    DUMMY_PLACES.push(createdPlace); //unshift(createdPlace)
+   //no longer needed for error as we can do the above function DUMMY_PLACES.push(createdPlace); //unshift(createdPlace)
 
     res.status(201).json({place: createdPlace})
 }
