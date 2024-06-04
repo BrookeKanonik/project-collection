@@ -422,7 +422,11 @@ nav {
 }
 @media (max-width: 600px) {
   .home-bannerImage-container,
+  .about-background,
   .about-background-image-container {
     display: none;
+  }
+  .footer-wrapper{
+    align-items: center;
   }
 }
