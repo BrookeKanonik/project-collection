@@ -3,6 +3,8 @@ import Navbar from './Navbar'
 import BannerBackground from '../Assets/home-banner-background.png'
 import BannerImage from "../Assets/home-banner-image.png"
 import {FiArrowRight} from 'react-icons/fi'
+// import {Routes, Route} from 'react-router-dom'
+// import Slideshow from './Slideshow'
 
 const Home = () => {
   return (
