@@ -4,7 +4,6 @@ const Contact = () => {
   return (
     <div className='contact-page-wrapper'>
       <h1 className='primary-heading'>Questions?</h1>
-      <h1 className='primary-heading'>We're here to help!</h1>
       <div className='contact-form-container'>
         <input type="text" placeholder='youremail@email.com'/>
         <button className='secondary-button'>Submit</button>

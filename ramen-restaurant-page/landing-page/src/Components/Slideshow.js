@@ -23,12 +23,12 @@ const Slideshow = () => {
             <div className='work-section-top'>
             <p className='primary-subheading'>Image Gallery</p>
             <h1 className='primary-heading'>Ramen Galore</h1>
-                <div className='ramenButtons'>
+                <div className='ramenButtons' id='ramenButtonsMobile'>
                     <h3 className="prev"onClick={prev}>PREV</h3>
-                        <img className="ramenImage" src={ramenImages[state]} alt="Ramen Image" />
+                        <img className="ramenImage" id='ramenImageMobile' src={ramenImages[state]} alt="Ramen Image" />
                     <h3 className="next" onClick={next}>NEXT</h3>
                 </div>
-        </div>
+            </div>
         </div>
     )
 }
