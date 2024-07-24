@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom' //extract 3 items from the BrowserRouter library
 import App from './App.jsx'
-import Home from './pages/home.jsx'
+import Home from './pages/Home.jsx'
 import Staff from './pages/Staff.jsx'
 import Services from './pages/Services.jsx'
 import Booking from './pages/Booking.jsx'
